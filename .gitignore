@@ -1,3 +1,22 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+# Godot specific
+.import/
+export.cfg
+export/
+.idea/
+.vscode/
+
+# User-specific files
+*.import
+*.godot
+*.gdns
+
+# Build directories
+bin/
+build/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Other files you don't want to track
+*.log
