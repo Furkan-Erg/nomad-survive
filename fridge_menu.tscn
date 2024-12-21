@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://gfkkqg1ew1m4"]
+
+[ext_resource type="Script" path="res://fridge_menu.gd" id="1_f6d8a"]
+[ext_resource type="Texture2D" uid="uid://bbbvihsj7wuok" path="res://Assets/foods/tabak.png" id="2_cwmfe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1de8"]
+bg_color = Color(0.701961, 0, 0, 0.254902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8p7lb"]
+bg_color = Color(0, 0, 0, 0.635294)
+
+[node name="fridge_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f6d8a")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -150.0
+offset_right = 90.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1de8")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8p7lb")
+
+[node name="frige_col" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -146.0
+offset_right = 87.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+
+[node name="Button" type="Button" parent="frige_col"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="frige_col"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="slot_0" type="TextureButton" parent="frige_col/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_cwmfe")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="frige_col"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="slot_1" type="TextureButton" parent="frige_col/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_cwmfe")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="frige_col"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="slot_2" type="TextureButton" parent="frige_col/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_cwmfe")
+
+[connection signal="pressed" from="frige_col/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="frige_col/HBoxContainer/slot_0" to="." method="_on_slot_0_pressed"]
+[connection signal="pressed" from="frige_col/HBoxContainer2/slot_1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="frige_col/HBoxContainer3/slot_2" to="." method="_on_slot_2_pressed"]

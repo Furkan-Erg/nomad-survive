@@ -1,0 +1,338 @@
+[gd_scene load_steps=31 format=3 uid="uid://cifmd8l7jjoxi"]
+
+[ext_resource type="Texture2D" uid="uid://dctkgc4mhudxl" path="res://Assets/floor.png" id="1_32hlh"]
+[ext_resource type="Texture2D" uid="uid://bl8cq18r7dieg" path="res://Assets/part-Slice 488.png" id="1_d2qyq"]
+[ext_resource type="Script" path="res://game.gd" id="1_xplt4"]
+[ext_resource type="Texture2D" uid="uid://dwyvjqvhxdr4d" path="res://Assets/part-Slice 303.png" id="2_l6gg7"]
+[ext_resource type="Texture2D" uid="uid://de6ox7226frt5" path="res://Assets/part-Slice 191.png" id="3_liv55"]
+[ext_resource type="Texture2D" uid="uid://ct51gof6s7aji" path="res://Assets/part-Slice 160.png" id="4_bsc5g"]
+[ext_resource type="Script" path="res://bed.gd" id="6_k46rt"]
+[ext_resource type="Texture2D" uid="uid://e8g4sfuphc8p" path="res://Assets/part-Slice 490.png" id="6_xasdj"]
+[ext_resource type="Texture2D" uid="uid://gsb0i5telhcd" path="res://Assets/part-Slice 265.png" id="7_b1gg8"]
+[ext_resource type="Script" path="res://fridge.gd" id="7_ycqig"]
+[ext_resource type="Texture2D" uid="uid://b1orsv4j03i1d" path="res://Assets/part-Slice 250.png" id="8_3ppvr"]
+[ext_resource type="Texture2D" uid="uid://vgmi1mea12gr" path="res://Assets/part-Slice 372.png" id="9_hadys"]
+[ext_resource type="Script" path="res://computer.gd" id="9_stbgv"]
+[ext_resource type="Texture2D" uid="uid://78ymmjehw6fh" path="res://Assets/part-Slice 16.png" id="9_xgjgd"]
+[ext_resource type="Texture2D" uid="uid://dgssoecjddb6s" path="res://Assets/part-Slice 218.png" id="10_3ku24"]
+[ext_resource type="Texture2D" uid="uid://ctkhqgy7e41e" path="res://Assets/part-Slice 15.png" id="12_gtk63"]
+[ext_resource type="Texture2D" uid="uid://b0ehml430tp7w" path="res://Assets/part-Slice 299.png" id="13_g6yeu"]
+[ext_resource type="Texture2D" uid="uid://r2rghf5vxsa1" path="res://Assets/part-Slice 416.png" id="14_32msu"]
+[ext_resource type="Texture2D" uid="uid://p1uns47fmubs" path="res://Assets/part-Slice 411.png" id="15_hp5c3"]
+[ext_resource type="PackedScene" uid="uid://cclsiqsdmhhkg" path="res://player.tscn" id="16_cwrjb"]
+[ext_resource type="Script" path="res://shop_list.gd" id="17_3b1nn"]
+[ext_resource type="Script" path="res://day_cycle.gd" id="22_rqajm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gukkw"]
+size = Vector2(1920, 365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_delac"]
+size = Vector2(26.1, 5.24999)
+
+[sub_resource type="LabelSettings" id="LabelSettings_txitv"]
+font_size = 31
+outline_size = 4
+outline_color = Color(0.933333, 0.917647, 0.415686, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e4kf"]
+size = Vector2(170, 232)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6ies"]
+radius = 93.2631
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vhpt"]
+font_size = 31
+outline_size = 4
+outline_color = Color(0.9316, 0.918378, 0.415277, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5s0c"]
+radius = 131.095
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ujqg1"]
+radius = 33.3333
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_xplt4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 802.0
+offset_top = 39.0
+offset_right = 854.0
+offset_bottom = 62.0
+text = "Health"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 804.0
+offset_top = 84.0
+offset_right = 862.0
+offset_bottom = 107.0
+text = "Hunger"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 922.0
+offset_top = 39.0
+offset_right = 974.0
+offset_bottom = 62.0
+text = "Thirst"
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 924.0
+offset_top = 84.0
+offset_right = 976.0
+offset_bottom = 107.0
+text = "Sleep"
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 800.0
+offset_top = 60.0
+offset_right = 900.0
+offset_bottom = 87.0
+size_flags_horizontal = 8
+max_value = 5.0
+step = 1.0
+value = 5.0
+
+[node name="HungerBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 800.0
+offset_top = 103.0
+offset_right = 900.0
+offset_bottom = 130.0
+size_flags_horizontal = 8
+max_value = 5.0
+step = 1.0
+value = 5.0
+
+[node name="ThirstBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 920.0
+offset_top = 60.0
+offset_right = 1020.0
+offset_bottom = 87.0
+size_flags_horizontal = 8
+max_value = 5.0
+step = 1.0
+value = 5.0
+
+[node name="SleepBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 920.0
+offset_top = 104.0
+offset_right = 1020.0
+offset_bottom = 131.0
+size_flags_horizontal = 8
+max_value = 5.0
+step = 1.0
+value = 5.0
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+offset_left = 882.0
+offset_top = 20.0
+offset_right = 922.0
+offset_bottom = 43.0
+
+[node name="DateLabel" type="Label" parent="CanvasLayer"]
+offset_left = 847.0
+offset_right = 887.0
+offset_bottom = 23.0
+
+[node name="Background" type="Node" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="Background"]
+z_index = -1
+texture = ExtResource("1_32hlh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Floor/StaticBody2D"]
+position = Vector2(0, -357.5)
+shape = SubResource("RectangleShape2D_gukkw")
+one_way_collision_margin = 0.0
+
+[node name="Part-slice488" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(201, -307)
+scale = Vector2(8, 8)
+texture = ExtResource("1_d2qyq")
+
+[node name="Part-slice160" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(-373, -462)
+scale = Vector2(8, 8)
+texture = ExtResource("4_bsc5g")
+
+[node name="Part-slice265" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(2.38419e-07, 170)
+scale = Vector2(10, 10)
+texture = ExtResource("7_b1gg8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/Part-slice265"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Part-slice265/StaticBody2D"]
+position = Vector2(-0.0500006, -8.02498)
+shape = SubResource("RectangleShape2D_delac")
+
+[node name="Part-slice372" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(871, -439)
+scale = Vector2(5, 5)
+texture = ExtResource("9_hadys")
+
+[node name="Bed" type="Node" parent="."]
+script = ExtResource("6_k46rt")
+
+[node name="Part-slice303" type="Sprite2D" parent="Bed"]
+texture_filter = 1
+position = Vector2(873, -109)
+scale = Vector2(10, 10)
+texture = ExtResource("2_l6gg7")
+
+[node name="Label" type="Label" parent="Bed"]
+offset_left = 808.0
+offset_top = 68.0
+offset_right = 934.0
+offset_bottom = 159.0
+text = "Pres E to open"
+label_settings = SubResource("LabelSettings_txitv")
+autowrap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="Bed"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Area2D"]
+position = Vector2(868, -47)
+shape = SubResource("RectangleShape2D_2e4kf")
+
+[node name="Fridge" type="Node" parent="."]
+script = ExtResource("7_ycqig")
+
+[node name="Part-slice191" type="Sprite2D" parent="Fridge"]
+texture_filter = 1
+position = Vector2(-832, -231)
+scale = Vector2(10, 10)
+texture = ExtResource("3_liv55")
+
+[node name="Area2D" type="Area2D" parent="Fridge"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/Area2D"]
+position = Vector2(-838, -74)
+shape = SubResource("CircleShape2D_i6ies")
+
+[node name="Label" type="Label" parent="Fridge"]
+offset_left = -900.0
+offset_top = -42.0
+offset_right = -769.0
+offset_bottom = 49.0
+text = "Pres E to open"
+label_settings = SubResource("LabelSettings_5vhpt")
+autowrap_mode = 2
+
+[node name="Computer" type="Node" parent="."]
+script = ExtResource("9_stbgv")
+
+[node name="Part-slice16" type="Sprite2D" parent="Computer"]
+texture_filter = 1
+position = Vector2(588, -137)
+scale = Vector2(10, 10)
+texture = ExtResource("9_xgjgd")
+
+[node name="Part-slice250" type="Sprite2D" parent="Computer"]
+texture_filter = 1
+position = Vector2(583, -252)
+scale = Vector2(10, 10)
+texture = ExtResource("8_3ppvr")
+
+[node name="Part-slice218" type="Sprite2D" parent="Computer"]
+texture_filter = 1
+position = Vector2(591, -55)
+scale = Vector2(10, 10)
+texture = ExtResource("10_3ku24")
+
+[node name="Part-slice15" type="Sprite2D" parent="Computer"]
+texture_filter = 1
+position = Vector2(717, -228)
+scale = Vector2(6, 6)
+texture = ExtResource("12_gtk63")
+
+[node name="Part-slice416" type="Sprite2D" parent="Computer"]
+texture_filter = 1
+position = Vector2(702, -80)
+scale = Vector2(5, 5)
+texture = ExtResource("14_32msu")
+
+[node name="Part-slice411" type="Sprite2D" parent="Computer"]
+texture_filter = 1
+position = Vector2(463, -218)
+scale = Vector2(3, 3)
+texture = ExtResource("15_hp5c3")
+
+[node name="Area2D" type="Area2D" parent="Computer"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/Area2D"]
+position = Vector2(590, -106)
+shape = SubResource("CircleShape2D_l5s0c")
+
+[node name="Label" type="Label" parent="Computer"]
+offset_left = 536.0
+offset_top = 26.0
+offset_right = 662.0
+offset_bottom = 117.0
+text = "Pres E to open"
+label_settings = SubResource("LabelSettings_txitv")
+autowrap_mode = 2
+
+[node name="ShopList" type="Node" parent="."]
+script = ExtResource("17_3b1nn")
+
+[node name="Part-slice490" type="Sprite2D" parent="ShopList"]
+texture_filter = 1
+position = Vector2(-362, -230)
+scale = Vector2(10, 10)
+texture = ExtResource("6_xasdj")
+
+[node name="Part-slice299" type="Sprite2D" parent="ShopList"]
+texture_filter = 1
+position = Vector2(-120, -230)
+scale = Vector2(3, 3)
+texture = ExtResource("13_g6yeu")
+
+[node name="Label" type="Label" parent="ShopList"]
+offset_left = -172.0
+offset_top = -74.0
+offset_right = -46.0
+offset_bottom = 17.0
+text = "Pres E to open"
+label_settings = SubResource("LabelSettings_txitv")
+autowrap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="ShopList"]
+position = Vector2(-120, -230)
+scale = Vector2(3, 3)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopList/Area2D"]
+position = Vector2(0, 54)
+shape = SubResource("CircleShape2D_ujqg1")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("16_cwrjb")]
+z_index = 1
+position = Vector2(-376, 147)
+scale = Vector2(6, 6)
+collision_layer = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[node name="DayCycle" type="Node" parent="."]
+script = ExtResource("22_rqajm")
+
+[connection signal="body_entered" from="Bed/Area2D" to="Bed" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Bed/Area2D" to="Bed" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Fridge/Area2D" to="Fridge" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Fridge/Area2D" to="Fridge" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Computer/Area2D" to="Computer" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Computer/Area2D" to="Computer" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="ShopList/Area2D" to="ShopList" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="ShopList/Area2D" to="ShopList" method="_on_area_2d_body_exited"]
